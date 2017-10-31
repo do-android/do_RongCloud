@@ -1,0 +1,158 @@
+{
+  "ID": "do_RongCloud",
+  "IsContainer": "0",
+  "Type": "SM",
+  "UIType": "Layout",
+  "Name": "融云",
+  "Version": "Internal",
+  "Description": "融云即时通信",
+  "Icon": "",
+  "BBS": "",
+  "Keyword": "",
+  "IOS": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Android": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Windows": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "WindowsPhone": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Html": {
+    "Support": 1,
+    "MinVersion": "5.0"
+  },
+  "Properties": [],
+  "Events": [
+    {
+      "ID": "messages",
+      "Description": "接收到新消息触发事件",
+      "ReturnType": "Node",
+      "ReturnType_JavaScript": "Node",
+      "ReturnDesc": "{\"messageId\": \"消息的唯一标识符\",\"conversationId\": \"所属会话的唯一标识符\",\"from\": \"发送方\",\"to\": \"接收方\",\"timestamp\": \"时间戳\",\"body\":{\"type\":\"消息体类型，包括，0.Text(文本),1.Image(图片),2.Location(位置),3.Voice(语音),4.Video(视频),5.File(文件)\",\"text（type为0）\": \"消息内容\",\"remotePath（type为1）\": \"大图remote路径\",\"localPath（type为1）\": \"大图local路径\",\"thumbnailRemotePath（type为1）\": \"小图remote路径\",\"thumbnailLocalPath（type为1）\": \"小图local路径\",\"latitude（type为2）\": \"纬度\",\"longitude（type为2）\": \"经度\",\"address（type为2）\": \"地址\",\"remotePath（type为3）\": \"音频remote路径\",\"localPath（type为3）\": \"音频local路径\",\"fileLength（type为3）\": \"音频文件大小\",\"duration（type为3）\":\"音频的时间长度\",\"remotePath（type为4）\": \"视频remote路径\",\"localPath（type为4）\": \"视频local路径\",\"thumbnailRemotePath（type为4）\": \"第一帧缩略图remote路径\",\"thumbnailLocalPath（type为4）\": \"第一帧缩略图local路径\",\"fileLength（type为4）\": \"视频文件大小\",\"duration（type为4）\": \"视频的时间长度\",\"remotePath（type为5）\": \"文件remote路径\",\"localPath（type为5）\": \"文件local路径\",\"fileLength（type为5）\": \"文件文件大小\"}}",
+      "Deprecated": false
+    },
+    {
+      "ID": "typingStatusChanged",
+      "Description": "输入状态改变事件,匹配对方正在输入的是文本消息还是语音消息",
+      "ReturnType": "Node",
+      "ReturnType_JavaScript": "Node",
+      "ReturnDesc": "{state:0 对方正在输入文本消息 | 1 对方正在输入语音消息}",
+      "Deprecated": false
+    }
+  ],
+  "syncMethodes": [],
+  "asyncMethodes": [
+    {
+      "ID": "addFriends",
+      "Name": "添加朋友",
+      "Description": "",
+      "ReturnType": "",
+      "ReturnType_JavaScript": "",
+      "ReturnDesc": "",
+      "Paras": [
+        {
+          "ID": "userId",
+          "Name": "用户id",
+          "Type": "Node",
+          "Type_JavaScript": "Node",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    },
+    {
+      "ID": "login",
+      "Name": "用户登录",
+      "Description": "使用token登录",
+      "ReturnType": "Node",
+      "ReturnType_JavaScript": "Node",
+      "ReturnDesc": "登录是否成功，返回信息为{state:' 0 成功 | 1 失败 ',message:' 回执信息 '}",
+      "Paras": [
+        {
+          "ID": "token",
+          "Name": "身份认证",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    },
+    {
+      "ID": "openConversation",
+      "Name": "打开单个会话",
+      "Description": "",
+      "ReturnType": "",
+      "ReturnType_JavaScript": "",
+      "ReturnDesc": "根据用户id打开会话",
+      "Paras": [
+        {
+          "ID": "userId",
+          "Name": "用户id",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    },
+    {
+      "ID": "setUserInfo",
+      "Name": "设置用户信息",
+      "Description": "",
+      "ReturnType": "",
+      "ReturnType_JavaScript": "",
+      "ReturnDesc": "",
+      "Paras": [
+        {
+          "ID": "userId",
+          "Name": "用户id",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "nickName",
+          "Name": "昵称",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "headPortrait",
+          "Name": "头像",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "只支持本地文件，支持： data:// source:// 打头的URI格式",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    }
+  ]
+}
